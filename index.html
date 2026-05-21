@@ -19,8 +19,6 @@
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
         html { scroll-behavior:smooth; }
         body { font-family:'IBM Plex Sans',sans-serif; background:var(--cream); color:var(--text); overflow-x:hidden; }
-
-        /* NAV */
         nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:14px 60px; display:flex; align-items:center; justify-content:space-between; background:var(--maroon); border-bottom:1px solid rgba(255,255,255,0.05); }
         .nav-logo { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:4px; color:var(--cream); text-decoration:none; }
         .nav-logo span { color:var(--amber); }
@@ -28,8 +26,6 @@
         .nav-links a { color:rgba(246,242,235,0.38); text-decoration:none; font-size:11px; letter-spacing:2px; text-transform:uppercase; transition:color 0.2s; }
         .nav-links a:hover { color:var(--cream); }
         .nav-cta { background:var(--amber) !important; color:var(--cream) !important; padding:8px 18px; border-radius:2px; font-weight:600 !important; }
-
-        /* HERO */
         .hero { display:grid; grid-template-columns:1.8fr 1fr; min-height:100vh; background:var(--maroon); position:relative; overflow:hidden; padding-top:52px; }
         .hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(246,242,235,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(246,242,235,0.015) 1px,transparent 1px); background-size:44px 44px; pointer-events:none; }
         .hero::after { content:''; position:absolute; bottom:-100px; left:-80px; width:420px; height:420px; background:radial-gradient(circle,rgba(196,133,42,0.12) 0%,transparent 60%); pointer-events:none; }
@@ -50,8 +46,6 @@
         .h-stat:last-child { border-right:none; }
         .h-stat-n { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--cream); line-height:1; margin-bottom:4px; letter-spacing:1px; }
         .h-stat-l { font-size:9px; color:rgba(246,242,235,0.28); letter-spacing:1.5px; text-transform:uppercase; font-family:'IBM Plex Mono',monospace; }
-
-        /* HERO RIGHT PANEL */
         .hero-right { background:var(--cream); border-left:1px solid rgba(246,242,235,0.06); padding:52px 36px 52px 40px; display:flex; flex-direction:column; justify-content:space-between; position:relative; z-index:1; overflow-y:auto; }
         .photo-wrap { display:flex; flex-direction:column; align-items:center; gap:8px; padding-bottom:18px; border-bottom:1px solid var(--border); margin-bottom:2px; }
         .photo-frame { width:120px; height:145px; border-radius:3px; overflow:hidden; border:1.5px solid var(--border2); background:var(--cream2); position:relative; }
@@ -70,15 +64,11 @@
         .d-name { font-size:10px; font-weight:600; color:var(--text); text-transform:uppercase; letter-spacing:0.3px; }
         .d-sub { font-size:9px; color:var(--text3); margin-top:1px; }
         .d-badge { margin-left:auto; font-size:8px; background:var(--cream2); color:var(--amber); padding:2px 7px; border-radius:2px; letter-spacing:1px; text-transform:uppercase; flex-shrink:0; white-space:nowrap; font-weight:600; border:1px solid rgba(196,133,42,0.2); font-family:'IBM Plex Mono',monospace; }
-
-        /* SECTIONS */
         section { padding:100px 60px; }
         .container { max-width:1200px; margin:0 auto; }
         .sec-label { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--amber); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
         .sec-label::before { content:''; width:18px; height:1px; background:var(--amber); }
         .sec-title { font-family:'Bebas Neue',sans-serif; font-size:52px; letter-spacing:2px; line-height:1; margin-bottom:48px; color:var(--text); }
-
-        /* ABOUT */
         #about { background:var(--white); border-bottom:1px solid var(--border); }
         .about-grid { display:grid; grid-template-columns:2fr 1fr; gap:72px; align-items:start; }
         .about-text p { color:var(--text2); line-height:1.9; font-size:15px; margin-bottom:14px; font-weight:300; }
@@ -86,8 +76,6 @@
         .stat { padding:18px 20px; background:var(--cream2); border:1px solid var(--border); }
         .stat-n { font-family:'Bebas Neue',sans-serif; font-size:36px; color:var(--amber); line-height:1; margin-bottom:4px; letter-spacing:1px; }
         .stat-l { font-size:9px; color:var(--text3); letter-spacing:1.5px; text-transform:uppercase; font-family:'IBM Plex Mono',monospace; }
-
-        /* PROJECTS */
         #projects { background:var(--cream); }
         .proj-filter { display:flex; gap:6px; margin-bottom:28px; flex-wrap:wrap; }
         .filter-btn { padding:7px 14px; border:1px solid var(--border2); background:transparent; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--text3); border-radius:2px; cursor:pointer; font-family:'IBM Plex Mono',monospace; transition:all 0.15s; }
@@ -113,8 +101,6 @@
         .proj-desc { font-size:13px; color:var(--text2); line-height:1.8; margin-bottom:14px; font-weight:300; }
         .tags { display:flex; flex-wrap:wrap; gap:5px; }
         .tag { background:var(--cream2); border:1px solid var(--border); color:var(--text3); font-size:9px; padding:3px 8px; border-radius:2px; text-transform:uppercase; letter-spacing:0.5px; font-family:'IBM Plex Mono',monospace; }
-
-        /* SKILLS */
         #skills { background:var(--white); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
         .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
         .skill-group { background:var(--cream); padding:24px 26px; border:1px solid var(--border); }
@@ -122,8 +108,6 @@
         .skill-list { list-style:none; display:flex; flex-direction:column; gap:9px; }
         .skill-list li { font-size:13px; color:var(--text2); display:flex; align-items:center; gap:10px; font-weight:300; }
         .skill-list li::before { content:''; width:4px; height:4px; background:var(--amber); border-radius:50%; flex-shrink:0; }
-
-        /* CERTS */
         #certifications { background:var(--cream); border-bottom:1px solid var(--border); }
         .cert-main { background:var(--white); border:1px solid var(--border); padding:32px 36px; display:flex; gap:28px; align-items:flex-start; position:relative; overflow:hidden; }
         .cert-main::before { content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:#009999; }
@@ -142,8 +126,6 @@
         .verified-badge { background:rgba(0,153,153,0.07); border:1px solid rgba(0,153,153,0.2); color:#009999; font-size:10px; font-weight:600; padding:7px 14px; border-radius:2px; letter-spacing:1px; text-transform:uppercase; white-space:nowrap; font-family:'IBM Plex Mono',monospace; }
         .cert-no { font-size:10px; color:var(--text3); font-family:'IBM Plex Mono',monospace; }
         .cert-link { font-size:10px; color:#009999; text-decoration:underline; cursor:pointer; font-family:'IBM Plex Mono',monospace; }
-
-        /* CONTACT */
         #contact { background:var(--maroon); text-align:center; position:relative; overflow:hidden; }
         #contact::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(246,242,235,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(246,242,235,0.015) 1px,transparent 1px); background-size:44px 44px; }
         .contact-eyebrow { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--amber); margin-bottom:14px; display:flex; align-items:center; justify-content:center; gap:12px; position:relative; }
@@ -153,12 +135,8 @@
         .contact-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; position:relative; }
         footer { border-top:1px solid rgba(246,242,235,0.07); padding:22px 60px; display:flex; align-items:center; justify-content:space-between; background:var(--maroon); }
         footer p { font-size:11px; color:rgba(246,242,235,0.18); font-family:'IBM Plex Mono',monospace; letter-spacing:0.5px; }
-
-        /* FADE UP */
         .fade-up { opacity:0; transform:translateY(22px); transition:opacity 0.65s ease,transform 0.65s ease; }
         .fade-up.visible { opacity:1; transform:translateY(0); }
-
-        /* RESPONSIVE */
         @media(max-width:960px){
             nav { padding:14px 24px; }
             .nav-links li:not(:last-child) { display:none; }
@@ -175,8 +153,6 @@
     </style>
 </head>
 <body>
-
-<!-- NAV -->
 <nav>
     <a href="#home" class="nav-logo">N<span>.</span>SINGH</a>
     <ul class="nav-links">
@@ -187,8 +163,6 @@
         <li><a href="NavleenSingh-Resume.pdf" target="_blank" class="nav-cta">Resume ↗</a></li>
     </ul>
 </nav>
-
-<!-- HERO -->
 <div class="hero" id="home">
     <div class="hero-left">
         <p class="hero-eyebrow">BASc Mechatronic Systems Engineering · SFU · Co-op 2026</p>
@@ -196,7 +170,7 @@
         <p class="hero-tagline">Building at the intersection of mechanical systems, embedded controls, and industrial automation. From SolidWorks assemblies to CAN bus firmware — I work across the full hardware stack.</p>
         <div class="hero-btns">
             <a href="#projects" class="btn-p">View Projects</a>
-            <a href="https://linkedin.com/in/navleen-singh" target="_blank" class="btn-g">LinkedIn</a>
+            <a href="https://linkedin.com/in/singh-navleen" target="_blank" class="btn-g">LinkedIn</a>
             <a href="#contact" class="btn-g">Contact</a>
         </div>
         <div class="hero-stats">
@@ -209,16 +183,7 @@
     <div class="hero-right">
         <div class="photo-wrap">
             <div class="photo-frame">
-                <!--
-                    ADD YOUR PHOTO:
-                    1. Create an "assets" folder next to this file
-                    2. Save your photo as "assets/profile.jpg"
-                    3. Replace the div below with: <img src="assets/profile.jpg" alt="Navleen Singh">
-                -->
-                <div class="photo-ph">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9A9098" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    <p>your photo here</p>
-                </div>
+                <img src="profile.jpg" alt="Navleen Singh">
             </div>
             <div class="photo-name">Navleen Singh</div>
             <div class="photo-role">Mechatronic Systems Engineer</div>
@@ -231,8 +196,6 @@
         <div class="domain-row"><span class="d-icon">💻</span><div><div class="d-name">Software & Firmware</div><div class="d-sub">Embedded C · Python</div></div><span class="d-badge">2 projects</span></div>
     </div>
 </div>
-
-<!-- ABOUT -->
 <section id="about">
     <div class="container">
         <p class="sec-label">Background</p>
@@ -252,8 +215,6 @@
         </div>
     </div>
 </section>
-
-<!-- PROJECTS -->
 <section id="projects">
     <div class="container">
         <p class="sec-label">Work</p>
@@ -267,13 +228,8 @@
             <button class="filter-btn" onclick="filterProjects('software',this)">Software</button>
         </div>
         <div class="proj-grid">
-
             <div class="proj-card fade-up" data-cat="mechanical">
-                <div class="proj-img">
-                    <!-- <img src="assets/braille-tablet.jpg" alt="Pneumatic Braille Tablet"> -->
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>add photo</span>
-                </div>
+                <div class="proj-img"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>add photo</span></div>
                 <div class="proj-body">
                     <div class="proj-top"><span class="proj-domain dom-mech">Mechanical</span><span class="proj-num">01</span></div>
                     <h3 class="proj-title">Pneumatic Membrane Braille Tablet</h3>
@@ -281,13 +237,8 @@
                     <div class="tags"><span class="tag">SolidWorks</span><span class="tag">FMEA</span><span class="tag">Pneumatics</span><span class="tag">Team Lead</span><span class="tag">Assistive Tech</span></div>
                 </div>
             </div>
-
             <div class="proj-card fade-up" data-cat="automotive">
-                <div class="proj-img">
-                    <!-- <img src="assets/can-logger.jpg" alt="CAN Bus Data Logger"> -->
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>add photo</span>
-                </div>
+                <div class="proj-img"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>add photo</span></div>
                 <div class="proj-body">
                     <div class="proj-top"><span class="proj-domain dom-auto">Automotive</span><span class="proj-num">02</span></div>
                     <h3 class="proj-title">CAN Bus Vehicle Data Logger</h3>
@@ -295,13 +246,8 @@
                     <div class="tags"><span class="tag">Embedded C</span><span class="tag">CAN Bus</span><span class="tag">OBD-II</span><span class="tag">MCP2515</span><span class="tag">SPI</span></div>
                 </div>
             </div>
-
             <div class="proj-card fade-up" data-cat="robotics">
-                <div class="proj-img">
-                    <!-- <img src="assets/robotics.jpg" alt="Autonomous Robotics"> -->
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>add photo</span>
-                </div>
+                <div class="proj-img"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>add photo</span></div>
                 <div class="proj-body">
                     <div class="proj-top"><span class="proj-domain dom-robot">Robotics</span><span class="proj-num">03</span></div>
                     <h3 class="proj-title">Autonomous Robotics — CV &amp; Inverse Kinematics</h3>
@@ -309,13 +255,8 @@
                     <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">YOLOX</span><span class="tag">C++</span><span class="tag">Raspberry Pi</span></div>
                 </div>
             </div>
-
             <div class="proj-card fade-up" data-cat="industrial">
-                <div class="proj-img">
-                    <!-- <img src="assets/siemens-plc.jpg" alt="Siemens PLC"> -->
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>add photo</span>
-                </div>
+                <div class="proj-img"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>add photo</span></div>
                 <div class="proj-body">
                     <div class="proj-top"><span class="proj-domain dom-ind">Industrial</span><span class="proj-num">04</span></div>
                     <h3 class="proj-title">Siemens PLC Station Programming</h3>
@@ -323,13 +264,8 @@
                     <div class="tags"><span class="tag">TIA Portal</span><span class="tag">Ladder Logic</span><span class="tag">Festo</span><span class="tag">PLC</span><span class="tag">FBD</span></div>
                 </div>
             </div>
-
             <div class="proj-card fade-up" data-cat="automotive">
-                <div class="proj-img">
-                    <!-- <img src="assets/audio.jpg" alt="Vehicle Audio System"> -->
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>add photo</span>
-                </div>
+                <div class="proj-img"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>add photo</span></div>
                 <div class="proj-body">
                     <div class="proj-top"><span class="proj-domain dom-auto">Automotive</span><span class="proj-num">05</span></div>
                     <h3 class="proj-title">Vehicle Audio System Rebuild</h3>
@@ -337,13 +273,8 @@
                     <div class="tags"><span class="tag">Power Systems</span><span class="tag">CAN Bus</span><span class="tag">Fault Diagnosis</span><span class="tag">EMI</span><span class="tag">Automotive</span></div>
                 </div>
             </div>
-
             <div class="proj-card fade-up" data-cat="automotive">
-                <div class="proj-img">
-                    <!-- <img src="assets/charging.jpg" alt="Charging System"> -->
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>add photo</span>
-                </div>
+                <div class="proj-img"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>add photo</span></div>
                 <div class="proj-body">
                     <div class="proj-top"><span class="proj-domain dom-auto">Automotive</span><span class="proj-num">06</span></div>
                     <h3 class="proj-title">Charging System Diagnosis &amp; Repair</h3>
@@ -351,13 +282,8 @@
                     <div class="tags"><span class="tag">Diagnostics</span><span class="tag">Multimeter</span><span class="tag">Electrical Systems</span><span class="tag">Automotive</span></div>
                 </div>
             </div>
-
             <div class="proj-card fade-up" data-cat="industrial">
-                <div class="proj-img">
-                    <!-- <img src="assets/electropneumatic.jpg" alt="Electropneumatic Systems"> -->
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>add photo</span>
-                </div>
+                <div class="proj-img"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>add photo</span></div>
                 <div class="proj-body">
                     <div class="proj-top"><span class="proj-domain dom-ind">Industrial</span><span class="proj-num">07</span></div>
                     <h3 class="proj-title">Electropneumatic Control Systems</h3>
@@ -365,13 +291,8 @@
                     <div class="tags"><span class="tag">FluidSIM</span><span class="tag">DCV</span><span class="tag">Relay Logic</span><span class="tag">Festo</span><span class="tag">Electropneumatics</span></div>
                 </div>
             </div>
-
             <div class="proj-card fade-up" data-cat="software">
-                <div class="proj-img">
-                    <!-- <img src="assets/snake.jpg" alt="Snake Game"> -->
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                    <span>add photo</span>
-                </div>
+                <div class="proj-img"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1A1014" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>add photo</span></div>
                 <div class="proj-body">
                     <div class="proj-top"><span class="proj-domain dom-soft">Software</span><span class="proj-num">08</span></div>
                     <h3 class="proj-title">Snake Game — Modular C / SDL2</h3>
@@ -379,46 +300,23 @@
                     <div class="tags"><span class="tag">C</span><span class="tag">SDL2</span><span class="tag">Linked List</span><span class="tag">State Machine</span><span class="tag">Memory Safety</span></div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
-
-<!-- SKILLS -->
 <section id="skills">
     <div class="container">
         <p class="sec-label">Capabilities</p>
         <h2 class="sec-title">Skills</h2>
         <div class="skills-grid">
-            <div class="skill-group fade-up">
-                <p class="skill-group-title">Software & CAD</p>
-                <ul class="skill-list"><li>SolidWorks</li><li>FluidSIM</li><li>TIA Portal (Siemens)</li><li>MATLAB</li><li>Arduino IDE</li></ul>
-            </div>
-            <div class="skill-group fade-up">
-                <p class="skill-group-title">Programming</p>
-                <ul class="skill-list"><li>C / Embedded C</li><li>Python</li><li>C++</li><li>SDL2</li><li>OpenCV / YOLOX</li></ul>
-            </div>
-            <div class="skill-group fade-up">
-                <p class="skill-group-title">Electrical & Hardware</p>
-                <ul class="skill-list"><li>CAN Bus / OBD-II</li><li>Electropneumatics</li><li>Festo Industrial Systems</li><li>Multimeter / Oscilloscope</li><li>SPI / Serial Protocols</li></ul>
-            </div>
-            <div class="skill-group fade-up">
-                <p class="skill-group-title">Automotive Diagnostics</p>
-                <ul class="skill-list"><li>OBDeleven / VCDS</li><li>CAN Bus Analysis</li><li>ECU Calibration Maps</li><li>Fault Code Diagnosis</li></ul>
-            </div>
-            <div class="skill-group fade-up">
-                <p class="skill-group-title">Languages</p>
-                <ul class="skill-list"><li>English (Full Professional)</li><li>Italian (Native)</li><li>Punjabi (Fluent)</li><li>Hindi (Conversational)</li><li>French (Conversational)</li></ul>
-            </div>
-            <div class="skill-group fade-up">
-                <p class="skill-group-title">Platforms</p>
-                <ul class="skill-list"><li>Raspberry Pi</li><li>Siemens S7 PLCs</li><li>MCP2515 / SPI</li><li>GitHub / Git</li></ul>
-            </div>
+            <div class="skill-group fade-up"><p class="skill-group-title">Software & CAD</p><ul class="skill-list"><li>SolidWorks</li><li>FluidSIM</li><li>TIA Portal (Siemens)</li><li>MATLAB</li><li>Arduino IDE</li></ul></div>
+            <div class="skill-group fade-up"><p class="skill-group-title">Programming</p><ul class="skill-list"><li>C / Embedded C</li><li>Python</li><li>C++</li><li>SDL2</li><li>OpenCV / YOLOX</li></ul></div>
+            <div class="skill-group fade-up"><p class="skill-group-title">Electrical & Hardware</p><ul class="skill-list"><li>CAN Bus / OBD-II</li><li>Electropneumatics</li><li>Festo Industrial Systems</li><li>Multimeter / Oscilloscope</li><li>SPI / Serial Protocols</li></ul></div>
+            <div class="skill-group fade-up"><p class="skill-group-title">Automotive Diagnostics</p><ul class="skill-list"><li>OBDeleven / VCDS</li><li>CAN Bus Analysis</li><li>ECU Calibration Maps</li><li>Fault Code Diagnosis</li></ul></div>
+            <div class="skill-group fade-up"><p class="skill-group-title">Languages</p><ul class="skill-list"><li>English (Full Professional)</li><li>Italian (Native)</li><li>Punjabi (Fluent)</li><li>Hindi (Conversational)</li><li>French (Conversational)</li></ul></div>
+            <div class="skill-group fade-up"><p class="skill-group-title">Platforms</p><ul class="skill-list"><li>Raspberry Pi</li><li>Siemens S7 PLCs</li><li>MCP2515 / SPI</li><li>GitHub / Git</li></ul></div>
         </div>
     </div>
 </section>
-
-<!-- CERTIFICATIONS -->
 <section id="certifications">
     <div class="container">
         <p class="sec-label">Credentials</p>
@@ -443,14 +341,11 @@
             <div class="cert-right">
                 <span class="verified-badge">✓ Verified</span>
                 <span class="cert-no">No. 1-41-0241</span>
-                <!-- Replace href with your actual Siemens credential URL -->
-                <a href="#" class="cert-link">View credential ↗</a>
+                <a href="Navleen_Singh.pdf" target="_blank" class="cert-link">View credential ↗</a>
             </div>
         </div>
     </div>
 </section>
-
-<!-- CONTACT -->
 <section id="contact">
     <div class="container">
         <p class="contact-eyebrow">Get in Touch</p>
@@ -458,19 +353,16 @@
         <p class="contact-sub">Open to co-op opportunities in automotive, aerospace, and industrial automation for Fall 2026.</p>
         <div class="contact-btns">
             <a href="mailto:navleen.singh@sfu.ca" class="btn-p">navleen.singh@sfu.ca</a>
-            <a href="https://linkedin.com/in/navleen-singh" target="_blank" class="btn-g">LinkedIn</a>
+            <a href="https://linkedin.com/in/singh-navleen" target="_blank" class="btn-g">LinkedIn</a>
             <a href="NavleenSingh-Resume.pdf" target="_blank" class="btn-g">Resume ↗</a>
         </div>
     </div>
 </section>
-
 <footer>
     <p>© 2026 Navleen Singh</p>
     <p>singh-navleen.github.io</p>
 </footer>
-
 <script>
-    // Fade up on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, i) => {
             if (entry.isIntersecting) {
@@ -480,8 +372,6 @@
         });
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // Active nav on scroll
     const sections = document.querySelectorAll('section[id], div[id]');
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
     window.addEventListener('scroll', () => {
@@ -489,17 +379,11 @@
         sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
         navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--amber)' : ''; });
     });
-
-    // Project filter
     function filterProjects(cat, btn) {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         document.querySelectorAll('.proj-card').forEach(card => {
-            if (cat === 'all' || card.dataset.cat === cat) {
-                card.style.display = '';
-            } else {
-                card.style.display = 'none';
-            }
+            card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
         });
     }
 </script>
