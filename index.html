@@ -611,8 +611,11 @@
     // Falls back to the existing placeholder if not found.
     document.querySelectorAll('.proj-card').forEach(card => {
         const id = card.dataset.project;
-        if (!id) return;
-        const src = `media/${id}/photo1.jpg`;
+                if (!id || !projectData[id] || !projectData[id].photos || !projectData[id].photos.length) return;
+                const firstPhoto = projectData[id].photos[0];
+                const fext = firstPhoto.split('.').pop().toLowerCase();
+                if (['mp4','webm','mov'].includes(fext)) return;
+                const src = firstPhoto;
         const img = new Image();
         img.onload = () => {
             const imgBox = card.querySelector('.proj-img');
