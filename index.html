@@ -19,7 +19,7 @@
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
         html { scroll-behavior:smooth; }
         body { font-family:'IBM Plex Sans',sans-serif; background:var(--cream); color:var(--text); overflow-x:hidden; }
-        nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:14px 60px; display:flex; align-items:center; justify-content:space-between; background:var(--maroon); border-bottom:1px solid rgba(255,255,255,0.05); }
+        nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:14px clamp(24px,5vw,90px); display:flex; align-items:center; justify-content:space-between; background:var(--maroon); border-bottom:1px solid rgba(255,255,255,0.05); }
         .nav-logo { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:4px; color:var(--cream); text-decoration:none; }
         .nav-logo span { color:var(--amber); }
         .nav-links { display:flex; gap:32px; list-style:none; align-items:center; }
@@ -29,13 +29,13 @@
         .hero { display:grid; grid-template-columns:1.8fr 1fr; min-height:100vh; background:var(--maroon); position:relative; overflow:hidden; padding-top:52px; }
         .hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(246,242,235,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(246,242,235,0.015) 1px,transparent 1px); background-size:44px 44px; pointer-events:none; }
         .hero::after { content:''; position:absolute; bottom:-100px; left:-80px; width:420px; height:420px; background:radial-gradient(circle,rgba(196,133,42,0.12) 0%,transparent 60%); pointer-events:none; }
-        .hero-left { padding:72px 60px; display:flex; flex-direction:column; justify-content:center; position:relative; z-index:1; }
+        .hero-left { padding:clamp(60px,6vw,96px) clamp(40px,5vw,90px); display:flex; flex-direction:column; justify-content:center; position:relative; z-index:1; }
         .hero-eyebrow { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--amber); margin-bottom:22px; display:flex; align-items:center; gap:12px; font-family:'IBM Plex Mono',monospace; }
         .hero-eyebrow::before { content:''; width:22px; height:1px; background:var(--amber); }
         .hero-name { font-family:'Bebas Neue',sans-serif; font-size:clamp(72px,8vw,110px); line-height:0.88; letter-spacing:2px; margin-bottom:22px; }
         .hero-name .l1 { color:var(--cream); }
         .hero-name .l2 { color:var(--amber); }
-        .hero-tagline { font-size:15px; color:rgba(246,242,235,0.48); line-height:1.85; max-width:440px; margin-bottom:32px; border-left:2px solid rgba(196,133,42,0.4); padding-left:16px; font-weight:300; }
+        .hero-tagline { font-size:clamp(15px,1.1vw,18px); color:rgba(246,242,235,0.48); line-height:1.85; max-width:clamp(440px,32vw,560px); margin-bottom:32px; border-left:2px solid rgba(196,133,42,0.4); padding-left:16px; font-weight:300; }
         .hero-btns { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:40px; }
         .btn-p { background:var(--amber); color:var(--cream); padding:13px 26px; text-decoration:none; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; border-radius:2px; display:inline-block; transition:background 0.2s,transform 0.15s; }
         .btn-p:hover { background:var(--amber2); transform:translateY(-1px); }
@@ -64,11 +64,11 @@
         .d-name { font-size:10px; font-weight:600; color:var(--text); text-transform:uppercase; letter-spacing:0.3px; }
         .d-sub { font-size:9px; color:var(--text3); margin-top:1px; }
         .d-badge { margin-left:auto; font-size:8px; background:var(--cream2); color:var(--amber); padding:2px 7px; border-radius:2px; letter-spacing:1px; text-transform:uppercase; flex-shrink:0; white-space:nowrap; font-weight:600; border:1px solid rgba(196,133,42,0.2); font-family:'IBM Plex Mono',monospace; }
-        section { padding:100px 60px; }
-        .container { max-width:1200px; margin:0 auto; }
+        section { padding:clamp(80px,7vw,120px) clamp(40px,5vw,90px); }
+        .container { width:100%; max-width:min(92vw,1500px); margin:0 auto; }
         .sec-label { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--amber); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
         .sec-label::before { content:''; width:18px; height:1px; background:var(--amber); }
-        .sec-title { font-family:'Bebas Neue',sans-serif; font-size:52px; letter-spacing:2px; line-height:1; margin-bottom:48px; color:var(--text); }
+        .sec-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(44px,5vw,72px); letter-spacing:2px; line-height:1; margin-bottom:clamp(36px,4vw,56px); color:var(--text); }
         #about { background:var(--white); border-bottom:1px solid var(--border); }
         .about-grid { display:grid; grid-template-columns:2fr 1fr; gap:72px; align-items:start; }
         .about-text p { color:var(--text2); line-height:1.9; font-size:15px; margin-bottom:14px; font-weight:300; }
