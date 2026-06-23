@@ -249,12 +249,12 @@
         <p class="sec-label">Work</p>
         <h2 class="sec-title">Projects</h2>
         <div class="proj-filter">
-            <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
             <button class="filter-btn" onclick="filterProjects('automotive',this)">Automotive</button>
             <button class="filter-btn" onclick="filterProjects('industrial',this)">Industrial</button>
             <button class="filter-btn" onclick="filterProjects('robotics',this)">Robotics</button>
             <button class="filter-btn" onclick="filterProjects('mechanical',this)">Mechanical</button>
             <button class="filter-btn" onclick="filterProjects('software',this)">Software</button>
+            <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
         </div>
         <div class="proj-grid">
             <div class="proj-card fade-up" data-project="01" onclick="openProject('01')" data-cat="mechanical">
@@ -551,48 +551,63 @@
         document.getElementById('pmDesc').textContent = p.desc;
         document.getElementById('pmTags').innerHTML = p.tags.map(t => `<span class="tag">${t}</span>`).join('');
 
-        // Photos
+        // Open the modal immediately — don't wait on any network checks
+        document.getElementById('projModalOverlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+
         const main = document.getElementById('pmGalleryMain');
         const thumbs = document.getElementById('pmThumbs');
-        main.innerHTML = `<div class="pm-gallery-ph">${photoIconSVG}<span>Loading photos…</span></div>`;
-        thumbs.innerHTML = '';
 
-        const checks = await Promise.all(p.photos.map(src => mediaExists(src).then(ok => ({src, ok}))));
-        pmCurrentPhotos = checks.filter(c => c.ok).map(c => c.src);
-
-        if (pmCurrentPhotos.length === 0) {
+        // Render the gallery right away from the photo list; the browser loads images natively
+        if (p.photos.length === 0) {
             main.innerHTML = `<div class="pm-gallery-ph">${photoIconSVG}<span>No photos added yet<br>Drop files into media/${id}/</span></div>`;
             thumbs.innerHTML = '';
+            pmCurrentPhotos = [];
         } else {
+            pmCurrentPhotos = p.photos.slice();
             setMainGallery(pmCurrentPhotos[0]);
             thumbs.innerHTML = pmCurrentPhotos.map(src => {
                 const ext = src.split('.').pop().toLowerCase();
                 const tag = ['mp4','webm','mov'].includes(ext) ? `<video src="${src}"></video>` : `<img src="${src}" alt="">`;
                 return `<div class="pm-thumb" data-src="${src}" onclick="setMainGallery('${src}')">${tag}</div>`;
             }).join('');
-            setMainGallery(pmCurrentPhotos[0]);
+
+            // In the background, quietly drop any photo that genuinely fails to load
+            p.photos.forEach(src => {
+                mediaExists(src).then(ok => {
+                    if (!ok) {
+                        pmCurrentPhotos = pmCurrentPhotos.filter(s => s !== src);
+                        const t = thumbs.querySelector(`.pm-thumb[data-src="${src}"]`);
+                        if (t) t.remove();
+                        if (pmCurrentPhotos.length === 0) {
+                            main.innerHTML = `<div class="pm-gallery-ph">${photoIconSVG}<span>No photos added yet<br>Drop files into media/${id}/</span></div>`;
+                        }
+                    }
+                });
+            });
         }
 
-        // Videos
+        // Videos — render immediately too, drop failures in the background
         const videoSection = document.getElementById('pmVideoSection');
         const videosEl = document.getElementById('pmVideos');
-        videosEl.innerHTML = '';
         if (p.videos.length === 0) {
             videoSection.style.display = 'none';
+            videosEl.innerHTML = '';
         } else {
             videoSection.style.display = '';
-            videosEl.innerHTML = `<p class="pm-empty-note">Checking for videos…</p>`;
-            const vchecks = await Promise.all(p.videos.map(src => mediaExists(src).then(ok => ({src, ok}))));
-            const found = vchecks.filter(c => c.ok);
-            if (found.length === 0) {
-                videosEl.innerHTML = `<p class="pm-empty-note">No videos added yet — drop .mp4 files into media/${id}/</p>`;
-            } else {
-                videosEl.innerHTML = found.map(c => `<div class="pm-video-wrap"><video src="${c.src}" controls playsinline></video></div>`).join('');
-            }
+            videosEl.innerHTML = p.videos.map(src => `<div class="pm-video-wrap" data-src="${src}"><video src="${src}" controls playsinline></video></div>`).join('');
+            p.videos.forEach(src => {
+                mediaExists(src).then(ok => {
+                    if (!ok) {
+                        const w = videosEl.querySelector(`.pm-video-wrap[data-src="${src}"]`);
+                        if (w) w.remove();
+                        if (!videosEl.querySelector('.pm-video-wrap')) {
+                            videosEl.innerHTML = `<p class="pm-empty-note">No videos added yet — drop .mp4 files into media/${id}/</p>`;
+                        }
+                    }
+                });
+            });
         }
-
-        document.getElementById('projModalOverlay').classList.add('open');
-        document.body.style.overflow = 'hidden';
     }
 
     function closeProject() {
